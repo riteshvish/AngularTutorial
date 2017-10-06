@@ -1,0 +1,19 @@
+<div>
+    <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit()">
+        <div>
+        <input type="text" placeholder="username" formControlName="username"/>
+        <strong *ngIf="loginForm.controls['username'].hasError('required') && loginForm.controls['username'].touched" style="color:red;">
+            Username is required
+        </strong>
+        </div>
+        <div>
+        <input type="text" placeholder="password" formControlName="password"/>
+        <strong *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched" style="color:red;">
+            Password is required
+        </strong>
+        </div>
+        <div>
+        <input type="submit" value="submit" [disabled]="!loginForm.valid"/>
+        </div>
+    </form>  
+</div>
