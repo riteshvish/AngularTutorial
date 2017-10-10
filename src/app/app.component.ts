@@ -9,22 +9,25 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 })
 export class AppComponent implements OnInit {
     loginForm: FormGroup;
+    clicked=false;
     constructor(private formBuilder: FormBuilder) { }
     ngOnInit() {
         this.loginForm = this.formBuilder.group({
             'username': ['', Validators.required],
             'password': ['', Validators.required]
         });
+
     }
 
     onFormSubmit(){
         // you can also check the form validity here instead disabling the submit button
         if(this.loginForm.valid){
-          alert("valid")
+        //  alert("valid")
        }
        else{
            // alert the user
-           alert("not valid")
+           this.clicked=true;
+           console.log("not valid")
        }
     }
   title = 'app';
