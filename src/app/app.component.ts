@@ -20,13 +20,12 @@ export class AppComponent implements OnInit {
     }
 
     onFormSubmit(){
+      this.clicked=true;
         // you can also check the form validity here instead disabling the submit button
-        if(this.loginForm.valid){
+       if(this.loginForm.valid){
         //  alert("valid")
        }
        else{
-           // alert the user
-           this.clicked=true;
            console.log("not valid")
        }
     }
