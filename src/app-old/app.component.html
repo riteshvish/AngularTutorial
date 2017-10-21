@@ -1,0 +1,98 @@
+<!--
+<div class="card">
+
+
+<p myHighlight>Highlight me!</p>
+
+<form class=""  method="post">
+  <div><input type="text" name="username" value="" onReturn [(ngModel)]="data.username"></div>
+  <input type="text" name="password" value="" (enter)="enterHandler($event)" [(ngModel)]="data.password"><br>
+
+  <input type="button" value="Submit" (click)="login(data)">
+</form>
+</div> -->
+<!-- <table>
+  <tr>
+    <td>
+      <input type="text" name="" value="">
+    </td>
+    <td>
+      <input type="text" name="" value="">
+    </td>
+    <td>
+      <input type="text" name="" value="">
+    </td>
+    <td>
+      <input type="button" name="" value="edit">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input type="text" name="" value="">
+    </td>
+    <td>
+      <input type="text" name="" value="">
+    </td>
+    <td>
+      <input type="text" name="" value="">
+    </td>
+    <td>
+      <input type="button" name="" value="edit">
+    </td>
+  </tr>
+</table> -->
+<div>
+    <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit()">
+        <div>
+        <input type="text" placeholder="username" formControlName="username"/>
+        <strong *ngIf="loginForm.controls['username'].hasError('required') && (loginForm.controls['username'].touched  || clicked)" style="color:red;">
+            Username is required
+        </strong>
+        <!-- <p *ngIf="loginForm.controls.username.errors?.rangeLength">error message</p> -->
+
+        </div>
+        <div>
+        <input type="text" placeholder="password" formControlName="password"
+        [max]="20"/>
+        <strong *ngIf="loginForm.controls['password'].hasError('required') && (loginForm.controls['password'].touched  || clicked)" style="color:red;">
+            Password is required
+        </strong>
+        </div>
+        <div>
+        <input type="submit" value="submit" />
+        </div>
+    </form>
+</div>
+
+
+<table>
+  <tr>
+    <th   style="width:30%">
+    Name
+  </th>
+    <th  style="width:30%">
+    Address
+  </th>
+    <th  style="width:30%">
+    Note
+  </th>
+    <th>
+      Action
+    </th>
+  </tr>
+  <tr *ngFor="let hero of list;let last=last;let index=index">
+    <td  [ngClass]="{'tdedit': hero.edit }"  style="width:30%">
+    <input type="text" name="" placeholder="Full Name"  (focus)="addRow($event,last)" [focus]="myFocusTriggeringEventEmitter" >
+    </td>
+    <td [ngClass]="{'tdedit': hero.edit }"  style="width:30%">
+    <input type="text" name="" placeholder="Address"  (focus)="addRow($event,last)" [focus]="myFocusTriggeringEventEmitter" >
+    </td>
+    <td [ngClass]="{'tdedit': hero.edit }" style="width:30%">
+    <input type="text" name="" placeholder="Note"  (focus)="addRow($event,last)" [focus]="myFocusTriggeringEventEmitter" >
+    </td>
+    <td>
+      <!-- <input type="button" name="" value="{{hero.edit?'save':'edit'}}" (click)='hero.edit?saveText(hero,index):editText(hero,index)'> -->
+      <input type="button" name="" value="delete" (click)='deleteRow(index)'>
+    </td>
+  </tr>
+</table>

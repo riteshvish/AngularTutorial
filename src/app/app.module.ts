@@ -1,21 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import  { FormsModule,ReactiveFormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+
 import { AppComponent } from './app.component';
-import * as directives from "./directives";
-let allDirectives=[];
-let allDirectivesKey=Object.keys(directives);
-for(var i=0;i<allDirectivesKey.length;i++){
-  allDirectives.push(directives[allDirectivesKey[i]])
-}
+
+import { ChatService } from './chat.service';
+
+import { ClientRoutingModule } from './app-routing.module';
+
+import { ChatComponent } from './chat/chat.component';
+import { HomeComponent } from './home/home.component';
+
 @NgModule({
-  declarations:[AppComponent,...allDirectives],
+  declarations: [
+    AppComponent,
+    ChatComponent,
+    HomeComponent
+  ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    HttpModule,
+    ClientRoutingModule    
   ],
-  providers: [],
+  providers: [ChatService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
