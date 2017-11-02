@@ -121,11 +121,11 @@ form {
   -o-transition: 0.5s all;
 }
 .login form input.user {
-  /*background: url('http://professor-excel.com/wp-content/uploads/2016/01/Wallpaper_Mobile_4.png')no-repeat 15px 7px #fff;*/
+  background: url('./images/user.png')no-repeat 15px 7px #fff;
   display: block;
 }
 .login form input.lock {
-  /*background: url('http://professor-excel.com/wp-content/uploads/2016/01/Wallpaper_Mobile_4.png')no-repeat 15px 7px #fff;*/
+  background: url('./images/key.png')no-repeat 15px 7px #fff;
   display: block;
 }
 label.checkbox {
@@ -172,7 +172,7 @@ label.checkbox {
 	-webkit-transition: opacity 0.1s;
 }
 .forgot .checkbox input + i:after {
-  content: url('http://professor-excel.com/wp-content/uploads/2016/01/Wallpaper_Mobile_4.png') no-repeat 7px 1px;
+  content: url('./images/key.png') no-repeat 7px 1px;
     top: 2px;
   left: 2px;
   width: 15px;
@@ -352,7 +352,7 @@ label.checkbox {
   background:#C74534;
 }
 i.anc-tw {
-  background: url('http://professor-excel.com/wp-content/uploads/2016/01/Wallpaper_Mobile_4.png')no-repeat 10px 9px #1CA4D6;
+  background: url('./images/twitter.png')no-repeat 10px 9px #1CA4D6;
   width: 26px;
   height: 19px;
   display: inline-block;
@@ -362,7 +362,7 @@ i.anc-tw {
 }
 i.anc-fa {
 float: left;
-  background: url('http://professor-excel.com/wp-content/uploads/2016/01/Wallpaper_Mobile_4.png')no-repeat 6px 9px #37528C;
+  background: url('./images/facebook.png')no-repeat 6px 9px #37528C;
   width: 26px;
   height: 19px;
   display: inline-block;
@@ -371,7 +371,7 @@ float: left;
   border-radius: 4px 0px 0px 4px;
 }
 i.anc-go {
-  background: url('http://professor-excel.com/wp-content/uploads/2016/01/Wallpaper_Mobile_4.png')no-repeat 9px 9px #C74534;
+  background: url('./images/google.png')no-repeat 9px 9px #C74534;
   width: 26px;
   height: 19px;
   display: inline-block;
