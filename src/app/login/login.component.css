@@ -47,12 +47,21 @@ h1 {
 }
 .login {
   /*width: 31%;*/
-	width: 350px;
+	/*width: 350px;
   margin: 0px auto;
   padding: 15px 0px 0px 0px;
   border-radius: 5px;
   background:#fff;
-	position: relative;
+	position: relative;*/
+	width: 350px;
+    margin: 0px auto;
+    padding: 15px 0px 0px 0px;
+    border-radius: 5px;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%)
 }
 .login h2 {
   font-size: 30px;
@@ -469,6 +478,7 @@ h1 {
 }
 .body{
   padding-top: 0;
+	height: calc(100vh -  0px);
   background-image: none;
 }
 .login {
