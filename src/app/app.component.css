@@ -1,0 +1,16 @@
+.body{
+	font-family: 'Open Sans', sans-serif;
+	background: url('./../assets/background.jpg');
+  height: calc(100vh);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	overflow: hidden;
+	position: relative;
+}
+@media(max-width:320px){
+.body{
+  /*width: 55%;*/
+	background: none;
+}
+}

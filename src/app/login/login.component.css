@@ -30,7 +30,7 @@ img{max-width:100%;}
 /*--sign up page start here--*/
 .body{
 	font-family: 'Open Sans', sans-serif;
-	background: url('./../../assets/background.jpg');
+	/*background: url('./../../assets/background.jpg');*/
   height: calc(100vh -  60px);
   padding-top: 60px;
 	background-repeat: no-repeat;
