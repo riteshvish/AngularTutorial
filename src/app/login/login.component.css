@@ -30,9 +30,12 @@ img{max-width:100%;}
 /*--sign up page start here--*/
 .body{
 	font-family: 'Open Sans', sans-serif;
-	background: url('http://professor-excel.com/wp-content/uploads/2016/01/Wallpaper_Mobile_4.png');
+	background: url('./../../assets/background.jpg');
   height: calc(100vh -  60px);
   padding-top: 60px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 }
 h1 {
   font-size: 2.3em;
@@ -42,11 +45,13 @@ h1 {
   margin: 1em 0em 0em 0em;
 }
 .login {
-  width: 31%;
+  /*width: 31%;*/
+	width: 350px;
   margin: 0px auto;
   padding: 15px 0px 0px 0px;
   border-radius: 5px;
   background:#fff;
+	position: relative;
 }
 .login h2 {
   font-size: 30px;
@@ -105,11 +110,11 @@ form {
   -o-transition: 0.5s all;
 }
 .login form input.user {
-  background: url('http://professor-excel.com/wp-content/uploads/2016/01/Wallpaper_Mobile_4.png')no-repeat 15px 7px #fff;
+  /*background: url('http://professor-excel.com/wp-content/uploads/2016/01/Wallpaper_Mobile_4.png')no-repeat 15px 7px #fff;*/
   display: block;
 }
 .login form input.lock {
-  background: url('http://professor-excel.com/wp-content/uploads/2016/01/Wallpaper_Mobile_4.png')no-repeat 15px 7px #fff;
+  /*background: url('http://professor-excel.com/wp-content/uploads/2016/01/Wallpaper_Mobile_4.png')no-repeat 15px 7px #fff;*/
   display: block;
 }
 label.checkbox {
@@ -265,7 +270,7 @@ label.checkbox {
   font-size: 16px;
   font-weight: 400;
   color: #000;
-  margin: 20px 0px 0px 0px;
+  margin: 8px 0px 0px 0px;
 }
 .login-bottom h4 a{
   font-size: 16px;
@@ -364,7 +369,7 @@ i.anc-go {
   border-radius: 4px 0px 0px 4px;
 }
 .button {
-  padding: 20px 0px 42px 0px;
+  padding: 2px 0px 12px 0px;
   border-bottom: 1px solid #ccc;
 }
 h3 {
@@ -428,22 +433,26 @@ h3 {
 }
 @media(max-width:1024px){
 .login {
-  width: 41%;
+  /*width: 41%;*/
+	width: 350px;
 }
 }
 @media(max-width:768px){
 .login {
-  width: 55%;
+  /*width: 55%;*/
+	width: 350px;
 }
 }
 @media (max-width: 640px){
 .login {
-  width: 70%;
+  /*width: 70%;*/
+	width: 350px;
 }
 }
 @media (max-width: 480px){
 .login {
-  width: 88%;
+  /*width: 88%;*/
+	width: 350px;
 }
 }
 @media(max-width:440px){
@@ -499,7 +508,7 @@ form {
   margin-bottom: 1em;
 }
 .button {
-  padding: 9px 0px 17px 0px;
+  padding: 2px 0px 8px 0px;
 }
 .login-bottom h4,.login-bottom h4 a {
   font-size: 13px;
@@ -508,7 +517,7 @@ form {
   padding: 6px 18px;
 }
 .login-bottom h3 {
-  padding: 15px 0px 0px 0px;
+  padding: 5px 0px 0px 0px;
   margin-top: 0.51em;
 }
 body {
