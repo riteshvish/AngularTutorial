@@ -8,26 +8,33 @@ import { AppComponent } from './app.component';
 
 import { ChatService } from './chat.service';
 
-import { ClientRoutingModule } from './app-routing.module';
 
-import { ChatComponent } from './chat/chat.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
+
+
+
+import { LoginComponent, SignupComponent,
+ForgotPasswordComponent,
+ResetPasswordComponent} from './login/login.component';
 import { LoaderComponent } from './loader/loader.component';
+import { RouterModule } from '@angular/router';
+import { routes } from './app.routes';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChatComponent,
-    HomeComponent,
     LoginComponent,
-    LoaderComponent
+    LoaderComponent,
+    SignupComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    ClientRoutingModule    
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule
   ],
   providers: [ChatService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

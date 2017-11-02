@@ -1,23 +1,19 @@
-<div class="body">
+
+ <div class="body">
+
 <div class="login">
-	<h2>Login</h2>
+	<h2>REGISTER</h2>
 	<form>
+		<input type="text" class="user active" value="User name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User name';}"/>
 		<input type="text" class="user active" value="User name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User name';}"/>
 		<input type="password" class="lock active" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"/>
 	</form>
-	<div class="forgot">
- 		  <div class="login-para">
- 			<p><a [routerLink]="['/forgot']"> Forgot Password? </a></p>
- 		 </div>
-		<div class="clear"> </div>
-	</div>
-	<div class="login-bwn">
-	   <input type="submit" value="Log in" />
 
+	<div class="login-bwn">
+	   <input type="submit" style="width: 36%;" value="REGISTER" />
 	</div>
 	<div class="login-bottom">
 		<h3>Login</h3>
-
 		<p>With your social media account</p>
 	 <div class="social-icons">
 		<div class="button">
@@ -29,11 +25,8 @@
 			<div class="clear"> </div></a>
 				<div class="clear"> </div>
 		</div>
-		<h4>Don,t have an Account? <a [routerLink]="['/signup']"> Register Now!</a></h4>
-		<div class="reg-bwn"><a [routerLink]="['/signup']">REGISTER</a></div>
-
+		<h4>Have an Account? <a [routerLink]="['/login']">Login</a></h4>
 	</div>
   </div>
 </div>
-
 </div>
