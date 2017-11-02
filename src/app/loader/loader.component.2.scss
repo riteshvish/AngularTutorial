@@ -1,0 +1,120 @@
+$bg: #15171c;
+$front: #3498db;
+$back: #5ec6ce;
+$left: #e74c3c;
+$right: #9b59b6;
+$top: #2ecc71;
+$bottom: #f1c40f;
+
+$cubeSize: 50px;
+$cubeTranslate: translateZ(25px);
+
+.body {
+  display: flex;
+  top:0;
+  left:0;
+  right:0;
+  bottom: 0;
+  position: absolute;
+  height: inherit;
+  width: inherit;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.5);
+}
+
+.cube-container {
+	width: $cubeSize;
+	height: $cubeSize;
+	position: relative;
+	perspective: 1000px;
+
+	#cube {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		transform-style: preserve-3d;
+		animation: cubeAnimation 6s ease infinite;
+
+		div {
+			position: absolute;
+			width: $cubeSize;
+			height: $cubeSize;
+		}
+
+		.front {
+			background: $front;
+			transform: $cubeTranslate;
+		}
+
+		.back {
+			background: $back;
+			transform: rotateX(-180deg) $cubeTranslate;
+		}
+
+		.right {
+			background: $right;
+			transform: rotateY(90deg) $cubeTranslate;
+		}
+
+		.left {
+			background: $left;
+			transform: rotateY(-90deg) $cubeTranslate;
+		}
+
+		.top {
+			background: $top;
+			transform: rotateX(90deg) $cubeTranslate;
+		}
+
+		.bottom {
+			background: $bottom;
+			transform: rotateX(-90deg) $cubeTranslate;
+		}
+	}
+}
+
+$showFront: translateZ(-25px);
+$showBack: translateZ(-25px) rotateX(-180deg);
+$showRight: translateZ(-25px) rotateY(-90deg);
+$showLeft: translateZ(-25px) rotateY(90deg);
+$showTop: translateZ(-25px) rotateX(-90deg);
+$showBottom: translateZ(-25px) rotateX(90deg);
+
+@keyframes cubeAnimation {
+	16.5% { transform: $showTop; }
+	33% { transform: $showBottom; }
+	49.5% { transform: $showRight; }
+	66% { transform: $showLeft; }
+	82% { transform: $showBack; }
+}
+
+.mtt {
+	position: fixed;
+	bottom: 10px;
+	right: 20px;
+	color: #999;
+	text-decoration: none;
+
+	span {
+		color: #e74c3c;
+	}
+
+	&:hover {
+		color: #666;
+
+		span {
+			color: #c0392b;
+		}
+	}
+}
+.message-container{
+  position: absolute;
+  background: #3498db;
+  width: 100%;
+  top:0;
+}
+.message-block{
+  padding: 10px;
+  display: none;
+}
