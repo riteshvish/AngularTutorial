@@ -88,3 +88,13 @@
 .mtt:hover span {
   color: #c0392b;
 }
+.message-container{
+  position: absolute;
+  background: #3498db;
+  width: 100%;
+  top:0;
+}
+.message-block{
+  padding: 10px;
+  display: none;
+}
