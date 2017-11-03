@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-
+import { PushNotificationsModule } from 'angular2-notifications';
 import { AppComponent } from './app.component';
 
 import { ChatService } from './chat.service';
@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { NoopAnimationsModule } from '@angular/platform-browser/animations/index';
 // import { NoopAnimationsModule } from '@angular/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { NotificationComponent } from './notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -30,14 +31,16 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     LoaderComponent,
     SignupComponent,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     BrowserAnimationsModule,
-  
+    PushNotificationsModule,
+
     RouterModule.forRoot(routes)
 
   ],
