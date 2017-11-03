@@ -1,15 +1,16 @@
 :host {
-  background: #1a2580;
-  color: #fff;
+  color: #ccc;
   position: fixed;
   left: auto;
   top: 0;
   right: 0;
   bottom: 0;
-  width: 20%;
-  min-width: 250px;
+  width: 60%;
+  min-width: 650px;
   z-index: 9999;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  overflow-y: auto;
+  background: #fff;
 }
 
 ul {

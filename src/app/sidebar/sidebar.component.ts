@@ -17,12 +17,13 @@ import { Component, OnInit, trigger, state, style, transition, animate } from '@
    ]),
    trigger('fadeInOut', [
      state('in', style({
-       opacity:1,
-       background:'red'
+       opacity:0.5,
+       background:'#fcfcfc'
      })),
      state('out', style({
        opacity:0,
-       background:'blue'
+       display:'none',
+       background:'#ccc'
      })),
      transition('in => out', animate('400ms ease-in-out')),
      transition('out => in', animate('400ms ease-in-out'))
