@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PushNotificationsService } from 'angular2-notifications'; //import the service
+import { FormControl, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-notification',
   templateUrl: './notification.component.html',
@@ -9,7 +10,16 @@ export class NotificationComponent implements OnInit {
 
   title = 'Web push Notifications!';
 
+    name:string;
+
+    basicForm = new FormGroup ({
+      name: new FormControl(),
+      iq: new FormControl(),
+      interested: new FormControl()
+    });
+
  constructor(private _pushNotifications: PushNotificationsService){
+    this.name = `Making your components ngModel enabled (After adding Form Essentials)`
    _pushNotifications.requestPermission(); // request for permission as soon as component loads
  }
 

@@ -18,11 +18,16 @@ ResetPasswordComponent} from './login/login.component';
 import { LoaderComponent } from './loader/loader.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { NoopAnimationsModule } from '@angular/platform-browser/animations/index';
 // import { NoopAnimationsModule } from '@angular/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NotificationComponent } from './notification/notification.component';
+import { TextareaExpandedComponent } from './textarea-expanded/textarea-expanded.component';
+import { CustomInputComponent,CustomRange } from './custom-input/custom-input.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,12 @@ import { NotificationComponent } from './notification/notification.component';
     SignupComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    NotificationComponent
+    NotificationComponent,
+    TextareaExpandedComponent,
+    CustomInputComponent,
+    CustomRange,
+    SidebarComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +50,7 @@ import { NotificationComponent } from './notification/notification.component';
     HttpModule,
     BrowserAnimationsModule,
     PushNotificationsModule,
+    ReactiveFormsModule,
 
     RouterModule.forRoot(routes)
 
