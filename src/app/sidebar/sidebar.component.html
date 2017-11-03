@@ -8,6 +8,12 @@
 <div class="overlay" [@fadeInOut]="menuState" (click)="toggleMenu()">
   Overlay
 </div>
-<app-menu [@slideInOut]="menuState"></app-menu>
-
+<app-menu [@slideInOut]="menuState">
+  <button (click)="toggleMenu()" class="hamburger">
+    <span>toggle menu</span>
+  </button>
+</app-menu>
+<div class="button">
+  <button type="button" name="button">Open</button>
+</div>
 </div>
