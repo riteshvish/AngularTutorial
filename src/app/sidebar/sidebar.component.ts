@@ -15,6 +15,18 @@ import { Component, OnInit, trigger, state, style, transition, animate } from '@
      transition('in => out', animate('400ms ease-in-out')),
      transition('out => in', animate('400ms ease-in-out'))
    ]),
+   trigger('fadeInOut', [
+     state('in', style({
+       opacity:1,
+       background:'red'
+     })),
+     state('out', style({
+       opacity:0,
+       background:'blue'
+     })),
+     transition('in => out', animate('400ms ease-in-out')),
+     transition('out => in', animate('400ms ease-in-out'))
+   ]),
  ]
 })
 export class SidebarComponent implements OnInit {
