@@ -1,5 +1,7 @@
 import { Component, OnInit, trigger, state, style, transition, animate } from '@angular/core';
-
+import {appendQuery}  from 'append-query'
+// import { RouteParams } from '@angular/router';
+// import {Router, ROUTER_DIRECTIVES, RouteParams} from '@angular/router';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -61,17 +63,47 @@ export class SidebarComponent implements OnInit {
   title = 'app works!';
 
   menuState:string = 'out';
+  insertParam(key, value)
+  {
+      key = encodeURI(key); value = encodeURI(value);
+    console.log(key)
+    console.log(value)
+      var kvp = document.location.search.substr(1).split('&');
+      console.log(kvp)
+      console.log(document.location.search)
 
+      var i=kvp.length; var x; while(i--)
+      {
+          x = kvp[i].split('=');
+
+          if (x[0]==key)
+          {
+              x[1] = value;
+              kvp[i] = x.join('=');
+              break;
+          }
+      }
+
+      if(i<0) {kvp[kvp.length] = [key,value].join('=');}
+
+      //this will reload the page, it's likely better to store this until finished
+      // document.location.search = 'http://localhost:4200/#/login?name=ritesh'
+
+  }
   toggleMenu() {
     // 1-line if statement that toggles the value:
     this.menuState = this.menuState === 'out' ? 'in' : 'out';
+    // appendQuery('http://localhost:4200/#/login', 'bar=baz&beep=boop')
+    // this.insertParam("name","rietsj")
   }
   toggleFullMenu() {
     // 1-line if statement that toggles the value:
     this.menuState = this.menuState === 'in' ? 'full' : 'in';
   }
-  constructor() { }
-
+  // constructor(private _routeParams: RouteParams) {
+  //    var queryParam = this._routeParams.get('menu');
+  // }
+  constructor(){}
   ngOnInit() {
   }
 
