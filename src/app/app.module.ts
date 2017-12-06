@@ -28,6 +28,9 @@ import { TextareaExpandedComponent } from './textarea-expanded/textarea-expanded
 import { CustomInputComponent,CustomRange } from './custom-input/custom-input.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MenuComponent } from './menu/menu.component';
+import { ServiceworkerComponent } from './serviceworker/serviceworker.component';
+import { SideBar2Component } from './side-bar2/side-bar2.component';
+import { SideMenuComponent } from './side-menu/side-menu.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { MenuComponent } from './menu/menu.component';
     CustomInputComponent,
     CustomRange,
     SidebarComponent,
-    MenuComponent
+    MenuComponent,
+    ServiceworkerComponent,
+    SideBar2Component,
+    SideMenuComponent
   ],
   imports: [
     BrowserModule,

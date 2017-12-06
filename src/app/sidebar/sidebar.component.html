@@ -1,19 +1,39 @@
 <div class="background" >
 
-<button (click)="toggleMenu()" class="hamburger">
-  <span>toggle menu</span>
-</button>
+<div class="contain" style="color:white" [@pusherInOut]="menuState">
+  <p>
+    This is my cont
+    This is my cont
+    This is my cont
+    This is my cont
+    This is my cont
+    This is my cont
+    This is my cont
+    This is my cont
+    This is my cont
+    This is my cont
+    This is my cont
+    This is my cont
+    This is my cont
+    This is my cont
+    This is my cont
+    This is my cont
+    This is my cont
+    This is my cont 
+  </p>
+</div>
 
 
-<div class="overlay" [@fadeInOut]="menuState" (click)="toggleMenu()">
+<div class="overlay" [@fadeInOut]="menuState" (click)="toggleMenu()" style="display:none">
   Overlay
 </div>
 <app-menu [@slideInOut]="menuState">
-  <button (click)="toggleMenu()" class="hamburger">
-    <span>toggle menu</span>
-  </button>
+
 </app-menu>
 <div class="button">
   <button (click)="toggleMenu()" class="hamburger">Open</button>
+</div>
+<div class="button" style="  top: 50px;">
+  <button (click)="toggleFullMenu()" class="hamburger">Full </button>
 </div>
 </div>
