@@ -19,7 +19,7 @@
     This is my cont
     This is my cont
     This is my cont
-    This is my cont 
+    This is my cont
   </p>
 </div>
 
@@ -30,10 +30,10 @@
 <app-menu [@slideInOut]="menuState">
 
 </app-menu>
-<div class="button">
+<div class="button" *ngIf="menuState!='full'">
   <button (click)="toggleMenu()" class="hamburger">Open</button>
 </div>
-<div class="button" style="  top: 50px;">
+<div class="button" style="  top: 50px;" *ngIf="menuState!='out'">
   <button (click)="toggleFullMenu()" class="hamburger">Full </button>
 </div>
 </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit, trigger, state, style, transition, animate } from '@angular/core';
 import {appendQuery}  from 'append-query'
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute,Router} from "@angular/router";
 // import { RouteParams } from '@angular/router';
 // import {Router, ROUTER_DIRECTIVES, RouteParams} from '@angular/router';
 @Component({
@@ -64,64 +64,41 @@ export class SidebarComponent implements OnInit {
   title = 'app works!';
 
   menuState:string = 'out';
-  insertParam(key, value)
-  {
-      key = encodeURI(key); value = encodeURI(value);
-    console.log(key)
-    console.log(value)
-      var kvp = document.location.search.substr(1).split('&');
-      console.log(kvp)
-      console.log(document.location.search)
-
-      var i=kvp.length; var x; while(i--)
-      {
-          x = kvp[i].split('=');
-
-          if (x[0]==key)
-          {
-              x[1] = value;
-              kvp[i] = x.join('=');
-              break;
-          }
-      }
-
-      if(i<0) {kvp[kvp.length] = [key,value].join('=');}
-
-      //this will reload the page, it's likely better to store this until finished
-      // document.location.search = 'http://localhost:4200/#/login?name=ritesh'
-
-  }
   toggleMenu() {
-    // 1-line if statement that toggles the value:
     this.menuState = this.menuState === 'out' ? 'in' : 'out';
-    // appendQuery('http://localhost:4200/#/login', 'bar=baz&beep=boop')
-    // this.insertParam("name","rietsj")
+    this.changeParams();
   }
   toggleFullMenu() {
-    // 1-line if statement that toggles the value:
     this.menuState = this.menuState === 'in' ? 'full' : 'in';
+    this.changeParams();
+  }
+  params={};
+  changeParams(){
+    this.params={};
+      if(this.menuState=="full"){
+          this.params["checkout"]=true
+      }
+      if(this.menuState=="in"){
+        this.params["cart"]=true
+      }
+      this.router.navigate([], {
+         queryParams: {...this.params},
+      });
 
   }
 
-  // constructor(private _routeParams: RouteParams) {
-  //    var queryParam = this._routeParams.get('menu');
-  // }
-  // constructor(){}
-  constructor(private route: ActivatedRoute) {
-      // let self=this;
-      // this.route.params.subscribe( params => {console.log(params)
-      //   this.menuState=params.menu;
-      // }
-      this.route.queryParams.subscribe( params => {console.log(params)
-        this.menuState=params.menu || "out";
+
+  constructor(private route: ActivatedRoute,private router:Router) {
+      this.route.queryParams.subscribe( params => {
+        if(params.cart)
+        this.menuState=params.cart?"in":"out"
+        if(params.checkout)
+        this.menuState=params.checkout?"full":"out"
       }
     );
   }
   ngOnInit() {
-    // this.router.navigate([], {
-    //     queryParams: {},
-    //     relativeTo: this.activeRoute
-    // });
+    // console.log("hei")
   }
 
 }
