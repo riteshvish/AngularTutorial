@@ -94,11 +94,47 @@ export class SidebarComponent implements OnInit {
         this.menuState=params.cart?"in":"out"
         if(params.checkout)
         this.menuState=params.checkout?"full":"out"
+        this.router.navigate([], {
+           queryParams: {...params},
+        });
       }
     );
   }
   ngOnInit() {
     // console.log("hei")
   }
+  /*
+  how to set query string
+  // this.params you existing querystring
+  // [] you route eg ["/cart"] empty means add qurery on the same route
+  // empty route will not reload page
+  constructor(private router:Router) {}
+  this.router.navigate([], {
+     queryParams: {...this.params,"key1","value"},
+  });
+
+  how to get query string
+  constructor(private route: ActivatedRoute) {}
+  this.route.queryParams.subscribe( params => {
+    console.log(params)
+  })
+
+  how to remove query string eg=pid=123
+  eg you want to remove pid
+  get your all the querystring
+
+  constructor(private route: ActivatedRoute,private router:Router) {}
+  this.route.queryParams.subscribe( params => {
+    // params will have all the querystring
+    delete params.pid;
+    console.log(params)
+    then query string again
+    this.router.navigate([], {
+      queryParams: {...this.params},
+    });
+  })
+
+
+  */
 
 }
