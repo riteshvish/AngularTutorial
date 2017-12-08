@@ -9,7 +9,7 @@ import { ServiceworkerComponent } from './serviceworker/serviceworker.component'
 import { SideBar2Component } from './side-bar2/side-bar2.component';
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: SidebarComponent },
+  { path: 'login', component: SideBar2Component },
   {path: 'signup',component: SignupComponent},
   {path: 'forgot',component: ForgotPasswordComponent},
   {path: 'reset',component: ResetPasswordComponent},

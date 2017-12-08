@@ -1,7 +1,28 @@
+<div class="background" >
+
+<div class="contain" style="color:white" [@pusherInOut]="menuState">
+  <router-outlet #o="outlet"></router-outlet>
+</div>
+
+
+<div class="overlay" [@fadeInOut]="menuState" (click)="toggleMenu()" style="display:none">
+  Overlay
+</div>
+<app-menu [@slideInOut]="menuState">
+
+</app-menu>
+<div class="button" *ngIf="menuState!='full'">
+  <button (click)="toggleMenu()" class="hamburger">Open</button>
+</div>
+<div class="button" style="  top: 50px;" *ngIf="menuState!='out'">
+  <button (click)="toggleFullMenu()" class="hamburger">Full </button>
+</div>
+</div>
+
 <!-- <router-outlet></router-outlet> -->
 <!-- <app-login></app-login> -->
 <!-- [@routerTransition]="getState(o)" -->
-
+<!--
 <main  class="body" >
   <router-outlet #o="outlet"></router-outlet>
-</main>
+</main> -->

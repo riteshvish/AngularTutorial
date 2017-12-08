@@ -1,4 +1,4 @@
-.main-block{
+/*.main-block{
   background: #c1b9b94a;
   position: fixed;
   height: 100vh;
@@ -11,4 +11,7 @@
   top:0;
   left:-50px;
   background: red;
+}*/
+.main-block{
+  /*background: red;*/
 }
